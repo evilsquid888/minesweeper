@@ -2,6 +2,10 @@ package com.VertexVerveInc.Games;
 
 import java.util.Random;
 
+import com.VertexVerveInc.GamesSquid.R;
+import com.google.ads.AdRequest;
+import com.google.ads.AdView;
+
 import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -73,6 +77,14 @@ public class MinesweeperGame extends Activity
 		mineField = (TableLayout)findViewById(R.id.MineField);
 		
 		showDialog("Click smiley to start New Game", 2000, true, false);
+		
+		// Look up the AdView as a resource and load a request.
+		AdView adView =  (AdView) this.findViewById(R.id.adView);
+		AdRequest ar = new AdRequest();
+		adView.loadAd(ar);
+		adView.setVisibility(View.VISIBLE);
+
+		
 	}
 
 	private void startNewGame()
